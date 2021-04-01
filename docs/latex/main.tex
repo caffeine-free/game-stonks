@@ -6,6 +6,7 @@
 \usepackage{indentfirst}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{float}
 
 \usepackage[pdftex]{hyperref}
 
@@ -20,7 +21,7 @@
 		\huge{Universidade Federal de Ouro Preto}
 
 \vspace{10pt}
-\begin{figure}[!ht]
+\begin{figure}[H]
 \centering
 \includegraphics[width=4cm]{img/logo.jpg}
 \end{figure}
@@ -63,7 +64,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Histórico de Revisões}
 
-\begin{table}[!h]
+\begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -71,7 +72,7 @@
 10/03/2021                 & 0.0                         & Justificativa do processo de software          & Eduardo     \\ \hline
 10/03/2021                 & 0.0                         & Levantamento de requisitos                     & Caio, Cibele e Gabriel            \\ \hline 
 20/03/2021                 & 0.0                         & Especificação de requisitos                     & Caio, Cibele e Gabriel            \\ \hline
-                           &                             &                                                &             \\ \hline 
+31/03/2021                  & 0.0                        & Requisitos a serem testados                 & Eduardo                            \\     \hline 
 \end{tabular}
 \caption{Revisões do Documento}
 \label{tab:my-table}
@@ -80,12 +81,12 @@
 \section{Processo e Software}
 % Apresente aqui uma breve explicação do modelo de processo de software escolhido. Lembre-se, vocês precisam citar claramente o modelo de processo de software escolhido, por exemplo, \textbf{SCRUM}.
 
-A equipe ‘‘cafeína++;’’, desenvolvedora do software ‘‘Game Stonks’’, adotou o processo de desenvolvimento incremental. Esta escolha levou em consideração o fato deste modelo permitir obter feedback rápido do cliente a partir de pequenas entregas iterativas. Desta forma, o custo de acomodar mudanças nos requisitos e o risco de falha global do projeto é reduzido. Ademais, é possível validar o sistema parcial a cada incremento, sendo uma vantagem já que o cliente não precisa esperar a entrega final para usá-lo. Portanto, os serviços de mais alta prioridade são entregues primeiros.
+A equipe ‘‘cafeína++;’’, desenvolvedora do software ‘‘Game Stonks’’, adotou o processo de desenvolvimento ágil Scrum. Esta escolha levou em consideração o fato deste modelo permitir a criação de um software útil rapidamente. Desta forma, desenvolvemos o sistema por uma série de incrementos, em que os usuários finais ou o representante do cliente participam da especificação e validação de cada incremento, garantindo o alcance da maior satisfação do cliente. Em termos teóricos ele se baseia em três pilares, transparência, inspeção e adaptação. Ou seja, todos os papéis, eventos, artefatos, propósitos e valores, são para dar visibilidade ao trabalho em questão, permitir uma validação antes, durante e depois do processo e a qualquer momento realizar ajustes nas demandas a serem executadas.
 
 \section{Cronograma}
 % Vocês devem apresentar aqui o cronograma das atividades e seus respectivos responsáveis. 
 
-\begin{table}[!h]
+\begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
@@ -109,7 +110,7 @@ Gabriel                    & Definição da tecnologia, arquitetura e classes   
 % Apresente a técnica que a sua equipe irá utilizar, explique porquê de tal técnica e quais os resultados obtidos.
 \subsection{Diagrama de Caso de Uso}
 
-\begin{figure}[ht!]
+\begin{figure}[H]
 \includegraphics[width=\textwidth]{./img/casos-de-uso.png}
 \centering
 \caption{Diagrama de Casos de Uso}\label{img:casos-de-uso}
@@ -117,7 +118,7 @@ Gabriel                    & Definição da tecnologia, arquitetura e classes   
 
 \subsection{Descrição de Caso de Uso}
 
-\begin{table}[!h]
+\begin{table}[H]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
@@ -182,8 +183,8 @@ RF08  & Gerir produtos      & \begin{tabular}[c]{@{}l@{}}Gerencia os produtos (j
 \textbf{RF05--} \textbf{Realizar Empréstimos:} Este serviço possibilita que o usuário efetue o empréstimo do jogo que deseja.
 \begin{itemize}
     \item \textbf{Validar dados do cartão:} Valida os dados de cartão de crédito do usuário.
-    \item \textbf{Efetua pagamento:} Utiliza uma API para realizar o pagamento do empréstimo solicitado pelo usuário.
-    \item \textbf{Libera Empréstimo:} Disponibiliza para o usuário os jogos que ele escolheu por empréstimo.
+    \item \textbf{Efetuar pagamento:} Utiliza uma API para realizar o pagamento do empréstimo solicitado pelo usuário.
+    \item \textbf{Liberar Empréstimo:} Disponibiliza para o usuário os jogos que ele escolheu por empréstimo.
 \end{itemize}
 
 \textbf{RF06--} \textbf{Gerir clientes:} Este serviço realiza todas as tarefas relacionadas ao cadastro de usuários do sistema.
@@ -214,44 +215,121 @@ RF08  & Gerir produtos      & \begin{tabular}[c]{@{}l@{}}Gerencia os produtos (j
 \end{itemize}
 
 \subsection{Requisitos Não Funcionais}
-
-Requisitos Não Funcionais são as propriedades que as funções devem ter, tais como desempenho e usabilidade. Não se detenha ao seu nome pouco apropriado (nós o usamos porque é a maneira mais comum de se referir a estes tipos de requisitos)—estes requisitos são tão importantes quanto as exigências funcionais, para o sucesso do produto.
-
-\textbf{RNF01.} A efetivação da reserva do pacote, só deve ser liberada após o cliente estar
+\textbf{RNF01.} A efetivação do empréstimo do jogo só deve ser liberada após o cliente estar
 logado no sistema.
 \textbf{Informações:} usuário e senha.
-\textbf{Regras:} o cliente terá acesso para comprar, consultar e alterar.
+\textbf{Regras:} o cliente terá acesso para contratar, consultar e alterar. 
+
+\textbf{RNF02} Compatibilidade com os sistemas operacionais Windows, Linux e MacOS.
+
+\textbf{RNF03} Tempo limite para processamento de todas as solicitações de empréstimos de jogos.
+
+\textbf{RNF04} Um visitante poderá visualizar os jogos que site tem disponível.
+ 
+\textbf{RNF05} Informações pessoais dos usuários não podem ser vistas pelos operadores do sistema.
+
 
 \section{Plano de VVT}
-Asseguram que o software cumpra com suas especificações e atenda às necessidades dos usuários. Você deve apresentar um plano de testes, ferramentas que serão utilizadas e coisas do tipo.
-
-Veja um exemplo no link: 
-\url{https://www.cin.ufpe.br/~gta/rup-vc/extend.formal_resources/guidances/examples/resources/test_plan_v1.htm}
 
 \subsection{Requisitos a serem testados}
-Esta seção descreve em linhas gerais o conjunto de requisitos a serem testados no projeto a ser desenvolvido, comunicando o que deve ser verificado. Exemplos de requisitos a serem testados são: desempenho, segurança, interface de usuário, controle de acesso, funcionalidades.
+
+\textbf{Teste de desempenho:} O objetivo deste teste consiste em validar se os requisitos de desempenho foram alcançados, como tempos de respostas e outros requisitos sensíveis ao tempo. Para isso deve-se:
+\begin{itemize}
+    \item Verificar tempo de resposta para login.
+    \item Verificar a eficácia da aplicação do software diante de um aumento de acessos simultâneos.
+    \item Verificar o tempo de resposta para atualizar o relatório financeiro diante das transações realizadas pelos usuários.
+\end{itemize}
+
+\textbf{Teste de segurança:} O objetivo deste teste consiste em verificar a proteção dos dados dos usuários do software, bem como revelar falhas e garantir a qualidade do software. Para isso deve-se:
+\begin{itemize}
+    \item Verificar possíveis falhas relacionadas a quebra de autenticação.
+    \item Verificar se há proteção dos dados pessoais de todos os usuários.
+    \item Verificar se há redirecionamento para sites maliciosos.
+\end{itemize}
+
+\textbf{Teste de interface de usuário:} O objetivo deste teste consiste em verificar se os componentes da interface estão respondendo às ações do usuário de maneira correta. Para isso deve-se:
+\begin{itemize}
+    \item Verificar funcionamento de botões.
+    \item Tratar eventos de timeouts.
+    \item Verificar se a navegação pelo aplicativo reflete os requisitos de negócios.
+    \item Verificar se objetos da interface estão em conformidade com os padrões.
+\end{itemize}
 
 \subsection{Estratégias e ferramentas de teste}
-Apresenta um conjunto de tipos de testes a serem realizados, respectivas técnicas empregadas e critério de finalização de teste. Além disso, é listado o conjunto de ferramentas utilizadas.
-
-\subsection{ Equipe e infra-estrutura}
-Contém descrição da equipe e da infra-estrutura utilizada para o desenvolvimento das atividades de testes, incluindo: pessoal, equipamentos, software de apoio, materiais, dentre outros. Isto visa garantir uma estrutura adequada para a execução das atividades de testes previstas no plano.
+\paragraph{Ferramenta Utilizada:} Jest é um framework de teste unitário de código aberto em JavaScript, sendo uma das ferramentas de teste unitário mais difundidas dentro da comunidade.
+\subsubsection{Tipos de teste}
+\paragraph{Teste Unitário:} O objetivo desse teste é verificar a adequadamente o processamento, recuperação dos dados e a funcionamento das estruturas implementadas. Esse tipo de teste baseia-se em técnicas de caixa branca, ou seja, usa a perspectiva interna do sistema, código fonte, para modelar os casos de teste.
+\subparagraph{Técnicas Utilizadas:}
+\begin{itemize}
+    \item Executar para cada classe do sistema a instanciação de objetos, acesso aos métodos e atributos.
+    \item Executar todos os métodos de cada classe do sistema verificando a validade dos resultados.
+\end{itemize}
+\subparagraph{Critérios de Conclusão:}
+\begin{itemize}
+    \item Todos os testes planejados foram executados.
+    \item Todos os defeitos identificados foram tratados.
+\end{itemize}
 
 \subsection{Execução do Plano de Teste}
+\subsubsection{Registrar Jogo}
+\noindent
+\textbf{Feature:} Testar a funcionalidade de registrar jogos. \\
+\textbf{Cenário:} O administrador deseja realizar o cadastro de um jogo na sistema. \\
+\textbf{Given:} O administrador informa os dados pertinentes aos jogos. \\
+\textbf{When:} O administrador realiza o cadastro dos jogos no sistema. \\
+\textbf{Then:} Os jogos são cadastrados no sistema.\\ 
 
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=14cm]{img/Capturar.PNG}
-\caption{Exemplo}
-\end{figure}
+\subsubsection{Registrar Cliente}
+\noindent
+\textbf{Feature:} Testar a funcionalidade de registrar clientes. \\
+\textbf{Cenário:} O usuário deseja realizar um empréstimo no sistema e para isso precisa se registrar para prosseguir. \\
+\textbf{Given:} O usuário informa seus dados pessoais para o cadrastro. \\
+\textbf{When:} O usuário tenta realizar um empréstimo no sistema. \\
+\textbf{Then:} O usuário preenche os campos com as informações solicitadas. \\
+
+\subsubsection{Adicionar ao Carrinho}
+\noindent
+\textbf{Feature:} Testar a funcionalidade que cria o carrinho de empréstimo do usuário. \\
+\textbf{Cenário:} O usuário irá selecionar os jogos que ele deseja pegar emprestado. \\
+\textbf{Given:} O usuário deseja alugar alguns jogos. \\
+\textbf{When:} O usuário tenta realizar um empréstimo no sistema. \\
+\textbf{Then:} O usuário finaliza a seleção de jogos e fecha o carrinho. \\
+
+\subsubsection{Efetuar Pagamento} 
+\noindent
+\textbf{Feature:} Testar a funcionalidade de efetuar os pagamentos dos serviços prestados pelo sistema. \\
+\textbf{Cenário:} O usuário deseja efetuar o pagamento referente ao empréstimo de um jogo. \\
+\textbf{Given:} O cliente adiciona um jogo ao carrinho. \\
+\textbf{And:} O cliente possui saldo suficiente. \\
+\textbf{When:} O cliente conclui a compra. \\
+\textbf{Then:} O valor referente ao empréstimo é descontado no saldo do cliente. \\
+\textbf{And:} A compra e o pagamento são efetuados com sucesso. \\
 
 \section{Medição e Qualidade de Software}
 
-Apresente aqui o formato da Medição e qualidade de software. Você deve mostrar os meios que irá avaliar a qualidade do seu software. Apresente o plano e os resultados a partir da prática de ferramentas de detecção de code smells, por exemplo.  Em Java, temos uma  ferramenta chamada JDEODORANT.  Você pode avaliar as métricas de qualidade também, por exemplo, em Java, temos CKMetrics\footnote{https://github.com/mauricioaniche/ck}
+O \textit{escomplex}\footnote{https://github.com/escomplex/escomplex} foi utilizado como ferramenta para ajudar na medição da qualidade do software. Essa ferramenta gera um relatório que tem um índice de complexidade do código escrito. Apesar disso, não se deve levar os resultados como valores absolutos para avaliar a complexidade do código desenvolvido. Algumas das métricas utilizadas por essa dependência são:
 
-\section{Observações}
+\begin{itemize}
+    \item Linhas de código: físicas (o número de linhas em um módulo ou função) e lógicas (uma contagem das instruções imperativas).
+    
+    \item Número de parâmetros: Analisados estaticamente a partir da assinatura da função, portanto, nenhuma contabilização é feita para funções que dependem dos argumentos do objeto (quanto menor, melhor). 
 
-Apresente aqui as dificuldades na disciplina,  trabalho prático e coisas do tipo. 
+    \item Complexidade ciclomática: É definida uma contagem do número de ciclos no gráfico de controle de fluxo do programa.
+    
+    \item Densidade de complexidade ciclomática: proposta como uma modificação da complexidade ciclomática, essa métrica simplesmente a reexpressa como uma porcentagem das linhas lógicas de código. (quanto menor, melhor).
+    
+    \item Medidas Halstead: Essas métricas são calculadas a partir do número de operadores e operandos em cada função (quanto menor, melhor).
+    
+    \item Índice de manutenção: É uma escala logarítmica de infinito negativo a 171, calculada a partir das linhas lógicas de código, a complexidade do ciclomatix e o esforço Halsteal (quanto mais alto, melhor).
+    
+    \item Densidade de primeira ordem: A porcentagem de todas as dependências internas possíveis que são realmente utilizados no projeto (quanto menor, melhor).
+    
+    \item Custo de mudança: A porcentagem de módulos afetados, em média, quando um módulo do projeto é alterado (quanto menor, melhor).
+    
+    \item Tamanho do núcleo: A porcentagem de módulos que são amplamente dependentes e dependem de outros módulos (quanto menor, melhor).
+\end{itemize}
+
+O \textit{JSHint}\footnote{https://jshint.com/docs/} é uma ferramenta de análise de código estática usada no desenvolvimento de software para verificar se o código-fonte JavaScript está em conformidade com as regras de codificação.
 
 \newpage
 \section{Referências}
