@@ -1,6 +1,6 @@
 const data = []
 
-const post = () => {
+function post() {
     const name = document.getElementById("name").value;
     const price = document.getElementById("price").value;
     const description = document.getElementById("description").value;
@@ -16,5 +16,3 @@ function createGames(name, price, description, id){
     data.push({ id, name, price, description })
     return data;
 }
-
-module.exports = createGames;
