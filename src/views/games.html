@@ -1,15 +1,10 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="../assets/js/games.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
 <link rel="shortcut icon" href="../../src/assets/img/fav-icon.png" />
 <title>Game Stonks</title>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <div class="container">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -33,7 +28,7 @@
 </nav>
 
 <div class="container d-flex justify-content-center align-items-center" style="height: 100%;">
-    <div class="jumbotron">
+    <div class="jumbotron vertical-center py-4">
         <form class="form-horizontal" action='' method="POST" >
         <fieldset>
             <div id="legend">
@@ -43,7 +38,7 @@
             <!-- Name -->
             <label class="control-label"  for="name">Name</label>
             <div class="controls">
-                <input type="text" id="name" name="name" placeholder="" class="input-xlarge">
+                <input type="text" id="name" name="name" placeholder="" class="input-xlarge w-100">
                 <p class="help-block">Name can contain any letters or numbers</p>
             </div>
             </div>
@@ -61,7 +56,7 @@
             <!-- Description -->
             <label class="control-label" for="description">Description</label>
             <div class="controls">
-                <input type="description" id="description" name="description" placeholder="" class="input-xlarge">
+                <textarea type="description" id="description" name="description" placeholder="" class="w-100"></textarea>
                 <p class="help-block">Description should be at least 50 characters</p>
             </div>
             </div>
@@ -77,4 +72,18 @@
     </div>
 </div>
 
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">
+        Developed by 
+        <a href="https://github.com/caffeine-free" style="color: inherit;">caffeine++;</a>
+      </p>
+    </div>
+<!-- /.container -->
+</footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../assets/js/games.js"></script>
