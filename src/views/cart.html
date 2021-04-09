@@ -6,49 +6,61 @@
 <link rel="shortcut icon" href="../../src/assets/img/fav-icon.png" />
 <title>Game Stonks</title>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="../../index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./users.html">Register user</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./games.html">Register game</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Cart
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-      </ul>
+<body onload="buildCart();">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./users.html">Register user</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./games.html">Register game</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Cart
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="empty" class="container d-flex justify-content-center align-items-center h-100">
+    <div id="error">
+      <div id="box"></div>
+      <h3>EMPTY CART</h3>
+      <p>Your cart is <span>empty</span> !!</p>
+      <p>I suggest come back later</p>
     </div>
   </div>
-</nav>
 
-<div id="empty" class="container d-flex justify-content-center align-items-center h-100">
-  <div id="error">
-    <div id="box"></div>
-    <h3>EMPTY CART</h3>
-    <p>Your cart is <span>empty</span> !!</p>
-    <p>I suggest come back later</p>
+  <div class="container d-flex justify-content-center align-items-center h-100">
+    <div class="row w-100 justify-content-center align-items-center">
+      <div id="list-div" class="col-12 col-sm-8 col-lg-5 w-100">
+        <!-- Content dynamically created by the script -->
+      </div>
+    </div>
   </div>
-</div>
 
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-  <div class="container">
-    <p class="m-0 text-center text-white">
-      Developed by 
-      <a href="https://github.com/caffeine-free" style="color: inherit;">caffeine++;</a>
-    </p>
-  </div>
-<!-- /.container -->
-</footer>
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">
+        Developed by 
+        <a href="https://github.com/caffeine-free" style="color: inherit;">caffeine++;</a>
+      </p>
+    </div>
+  <!-- /.container -->
+  </footer>
+</body>
+
+<script src="../assets/js/cart.js"></script>
