@@ -29,6 +29,9 @@ function createGames(name, price, description, id){
     }
     
     data.push({ id, name, price, description })
+
+    console.log(JSON.stringify(data))
+
     return data;
 }
 

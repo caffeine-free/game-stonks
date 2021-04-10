@@ -7,8 +7,13 @@ function post(gameId) {
   const description = document.getElementById(`desc-game-${gameId}`).innerHTML;
   const id = Math.random().toString(32).substr(2, 9);
 
-  data.push({ id, img, name, price, description });
+  insertGameCart(id, img, name, price, description);
   localStorage.setItem('data', JSON.stringify(data));
+}
+
+function insertGameCart(id, img, name, price, description){
+  data.push({id, img, name, price, description});
+  return data;
 }
 
 function buildCart() {
@@ -49,3 +54,5 @@ function buildCart() {
     });
   } 
 }
+
+module.exports = insertGameCart;
